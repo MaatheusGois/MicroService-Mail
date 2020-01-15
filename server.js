@@ -12,16 +12,7 @@ app.get('/', (req, res) => {
         success: true,
         msg: `Working...`
     })
-})
-
-// let from = '"Palavra Viva 🙏🏻" <app.palavra.viva@gmail.com>'
-// let subject = 'Avaliação do Protótipo - Palavra Viva'
-// let to = 'matheusgoislimasilva@gmail.com'
-// let auth = {
-//     user: 'app.palavra.viva@gmail.com',
-//     pass: 'viva123!@#'
-// }
-        
+})      
         
 app.post('/send', async (req, res, next) => { 
     try {
