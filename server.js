@@ -10,11 +10,11 @@ const app = express()
 app.get('/', (req, res) => {
     res.json({
         success: true,
-        msg: `Working...`
+        msg: `Documentation: 'https://github.com/MaatheusGois/MicroService-Mail' `
     })
 })      
         
-app.post('/send', async (req, res, next) => { 
+app.post('api/send', async (req, res, next) => { 
     try {
         let options = SendEmail.config(req.body)
         let content = await SendEmail.send(options)
