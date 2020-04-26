@@ -1,11 +1,14 @@
 
 ////To unlock login >> https://www.google.com/settings/security/lesssecureapps
 const express = require('express')
+const bodyParser = require('body-parser')
 const SendEmail = require('./SendEmail')
 
 //config
 const port = 3003
 const app = express()
+
+app.use(bodyParser.json())
 
 app.get('/', (req, res) => {
     res.json({
@@ -14,7 +17,7 @@ app.get('/', (req, res) => {
     })
 })      
         
-app.post('api/send', async (req, res, next) => { 
+app.post('/api/send', async (req, res, next) => { 
     try {
         let options = SendEmail.config(req.body)
         let content = await SendEmail.send(options)

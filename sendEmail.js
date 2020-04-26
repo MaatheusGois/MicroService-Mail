@@ -10,7 +10,8 @@ function config({ from = '', subject = '', to = [], text = '', html = '', servic
 	}
 
 	let optionsTransport = {
-		service,
+		host: 'smtp.gmail.com', 
+ 		port: 465,
 		auth
 	}
 	return { optionsMail, optionsTransport }
@@ -24,7 +25,7 @@ async function send({ optionsMail, optionsTransport }) {
 			let transporter = nodemailer.createTransport(optionsTransport)
 			let info = await transporter.sendMail(optionsMail)
 			resolve(info)
-		} catch(error) {
+		} catch (error) {
 			reject(error)
 		}
 	})
