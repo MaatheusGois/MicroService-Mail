@@ -9,7 +9,6 @@ async function bootstrap() {
     .setTitle('Send E-mail')
     .setDescription('The send e-mail API description')
     .setVersion('1.0')
-    .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
